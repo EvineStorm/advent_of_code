@@ -16,4 +16,12 @@ for index, entry in enumerate(expense_report):
 
 # In your expense report, what is the product of the three entries that sum to 2020?
 
-
+for index, first_entry in enumerate(expense_report):
+    for second_entry in expense_report[(index+1):]:
+        for third_entry in expense_report[(index + 2):]:
+            # prevents the numbers already added together on previous iterations being checked again
+            if first_entry + second_entry + third_entry == 2020:
+                print("The answer is: " + str(first_entry) + " * " + str(second_entry) + " * " +
+                      str(third_entry) + " = " + str(first_entry * second_entry * third_entry) + " !")
+            else:
+                pass
