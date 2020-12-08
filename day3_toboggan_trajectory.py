@@ -9,9 +9,9 @@ side = 0
 down = 0
 trees = 0
 pattern_width = len(slope_map[0])
-slope_hight = len(slope_map) - 1    # - 1 to convert to index and making sure the last iteration does not fail.
+slope_hight = len(slope_map)
 
-for level in range(slope_hight):
+while down < len(slope_map) - 1:
     side += 3    # 3 to the right
     down += 1    # 1 down
     side = side if side < pattern_width else side - pattern_width   # Continue in pattern after initial block.
@@ -21,3 +21,38 @@ for level in range(slope_hight):
         pass
 
 print(trees)
+
+# Right 1, down 1.
+# Right 3, down 1. (This is the slope you already checked.)
+# Right 5, down 1.
+# Right 7, down 1.
+# Right 1, down 2.
+
+# What do you get if you multiply together the number of trees encountered on each of the listed slopes?
+slopes = [[1, 1], [3, 1], [5, 1], [7, 1], [1, 2]]
+trees_on_slope = []
+
+for slope in slopes:
+    side = 0
+    down = 0
+    trees = 0
+    while down < len(slope_map) - 1:
+        side += slope[0]
+        down += slope[1]
+        side = side if side < pattern_width else side - pattern_width   # Continue in pattern after initial block.
+        encounter = slope_map[down][side]
+        if encounter == "#":
+            trees += 1
+        else:
+            pass
+    trees_on_slope += [trees]
+
+def multiply_list(my_list):
+    result = 1
+    for x in my_list:
+        result = result * x
+    return result
+
+
+print(trees_on_slope)
+print(multiply_list(trees_on_slope))
