@@ -36,7 +36,7 @@ print(all_seat_ids[-1])
 # Your seat wasn't at the very front or back, though; the seats with IDs +1 and -1 from yours will be in your list.
 
 for index, seat in enumerate(all_seat_ids):
-    if index == 0 : # Skip the first
+    if index == 0:  # Skip the first
         pass
     else:
         if seat - all_seat_ids[index-1] == 2:
