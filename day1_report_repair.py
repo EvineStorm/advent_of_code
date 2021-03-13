@@ -13,6 +13,7 @@ for index, entry in enumerate(expense_report):
         else:
             pass
 
+
 # In your expense report, what is the product of the three entries that sum to 2020?
 
 for index, first_entry in enumerate(expense_report):

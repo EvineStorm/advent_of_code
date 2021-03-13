@@ -68,4 +68,5 @@ with open("adventofcode_day4.txt") as day4_file:
 
 print(valid_passports)
 
+
 #   189 is te hoog -> 188 is goed? waarom heb ik dat laatste if statement voor check_passport nodig en voor validate_password niet?
