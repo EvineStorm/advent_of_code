@@ -47,6 +47,7 @@ for slope in slopes:
             pass
     trees_on_slope += [trees]
 
+
 def multiply_list(my_list):
     result = 1
     for x in my_list:

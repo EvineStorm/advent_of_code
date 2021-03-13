@@ -3,7 +3,6 @@
 with open("adventofcode_day1.txt") as day1_file:
     expense_report = day1_file.read().splitlines()
     expense_report = [int(i) for i in expense_report]
-    day1_file.close()
 
 for index, entry in enumerate(expense_report):
     for compare_entry in expense_report[(index+1):]:
